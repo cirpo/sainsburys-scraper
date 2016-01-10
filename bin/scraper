@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+use Goutte\Client;
+use Sainsburys\Command\ProductsScraperCommand;
+use Sainsburys\Scraper\ProductDetailScraper;
+use Sainsburys\Scraper\ProductListScraper;
+use Sainsburys\Service\ProductsInfoScraper;
+use Symfony\Component\Console\Application;
+
+$client     = new Client();
+$httpClient = new \GuzzleHttp\Client(['timeout' => 5]);
+$client->setClient($httpClient);
+
+$productInfoScraper = new ProductsInfoScraper(new ProductListScraper($client), new ProductDetailScraper($client));
+
+$app                   = new Application();
+$productScraperCommand = new ProductsScraperCommand($productInfoScraper);
+
+$app->add($productScraperCommand);
+$app->setDefaultCommand($productScraperCommand->getName());
+
+$app->run();
