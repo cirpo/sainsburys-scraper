@@ -4,7 +4,7 @@ namespace test\Sainsburys\Model;
 
 use Sainsburys\Model\Url;
 
-class UrlTes extends \PHPUnit_Framework_TestCase
+class UrlTest extends \PHPUnit_Framework_TestCase
 {
     public function testInitializeValidUrl()
     {

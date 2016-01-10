@@ -6,6 +6,9 @@ use Sainsburys\Exception\InvalidUrlException;
 use Sainsburys\Model\Url;
 use Symfony\Component\DomCrawler\Crawler;
 
+/**
+ * Class ProductListScraper.
+ */
 class ProductListScraper extends Scraper
 {
     const PRODUCT_SELECTOR = 'div.product';
@@ -22,6 +25,7 @@ class ProductListScraper extends Scraper
     {
         $urls    = [];
         $crawler = $this->scrape($url);
+
         if ($crawler) {
             $crawler
                 ->filter(self::PRODUCT_SELECTOR)

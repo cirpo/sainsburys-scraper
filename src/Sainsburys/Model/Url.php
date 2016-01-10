@@ -4,6 +4,9 @@ namespace Sainsburys\Model;
 
 use Sainsburys\Exception\InvalidUrlException;
 
+/**
+ * Class Url.
+ */
 class Url
 {
     /**

@@ -6,6 +6,9 @@ use Goutte\Client;
 use GuzzleHttp\Exception\RequestException;
 use Sainsburys\Model\Url;
 
+/**
+ * Class Scraper.
+ */
 class Scraper
 {
     /**
@@ -15,6 +18,8 @@ class Scraper
 
     /**
      * Scraper constructor.
+     *
+     * @param Client $client
      */
     public function __construct(Client $client)
     {
