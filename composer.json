@@ -6,11 +6,23 @@
         "phpunit/php-code-coverage": "^3.1",
         "behat/behat": "dev-master"
     },
+    "autoload": {
+      "psr-4": {"": "src"}
+    },
+    "autoload-dev": {
+      "psr-4": {"Test\\": "test"}
+    },
+    "config": {
+      "bin-dir": "bin"
+    },
     "license": "MIT",
     "authors": [
         {
             "name": "cirpo",
             "email": "alessandro.cinelli@gmail.com"
         }
-    ]
+    ],
+    "require": {
+        "fabpot/goutte": "^3.1"
+    }
 }
