@@ -1,22 +1,23 @@
 # Sainsbury’s Software Engineering Test
 
-This task is intended to test your ability to consume a webpage, process some data 
-and present it.
+[![Build Status](https://travis-ci.org/cirpo/sainsburys-scraper.svg?branch=master)](https://travis-ci.org/cirpo/sainsburys-scraper)
 
-Using best practice coding methods, build a console application that scrapes the 
+*This task is intended to test your ability to consume a webpage, process some data 
+and present it.*
+
+*Using best practice coding methods, build a console application that scrapes the 
 Sainsbury’s grocery site - Ripe Fruits page and returns a JSON array of all the 
-products on the page.
+products on the page.*
 
-You need to follow each link and get the size (in kb) of the linked HTML (no assets) 
-and the description to display in the JSON
+*You need to follow each link and get the size (in kb) of the linked HTML (no assets) 
+and the description to display in the JSON.*
 
-Each element in the JSON results array should contain `title`, `unit_price`, `size` and 
+*Each element in the JSON results array should contain `title`, `unit_price`, `size` and 
 `description` keys corresponding to items in the table.
-Additionally, there should be a total field which is a sum of all unit prices on the page.
-The link to use is:
-
+Additionally, there should be a total field which is a sum of all unit prices on the page.*
 
 Example JSON:
+
 ```json
 {
    "results":[
@@ -47,17 +48,17 @@ Clone the repository and install dependencies:
 
 ## Run
 
-Just launch the command below in your shell:
+Just launch the default command below in your shell:
 ```bash
  
  bin/scraper
 ```
 
-Opionally you can pass a specific url 
+Opionally you can pass a specific grocery list url 
 
 ```bash
  
- bin/scraper products-scraper http://example.com
+ bin/scraper products-scraper http://another-sainsburys-grocery-list-url
 ```
 
 You can get a formatted json output using the --pretty option
