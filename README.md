@@ -47,7 +47,7 @@ Clone the repository and install dependencies:
 
 ## Run
 
-Just launch the command below in you shell:
+Just launch the command below in your shell:
 ```bash
  
  bin/scraper
@@ -84,14 +84,14 @@ You can get a formatted json output using the --pretty option
 
 ## Design
 
-I designed the app as per requirement: the code should concise as possibile and get straight to the point without forgetting decoupled code.
-I could have used a dependency injection container, even a small one like Pimple, but I prefereed to keep it simple and 
-initialize the objects with their releations directly in the [app](https://github.com/cirpo/sainsburys-scraper/blob/76be66b0dd4f4171058d896a1c0e1ef6a05d3bcd/bin/scraper#L13L20)
+I designed the app as per requirement: the code should be as concise as possibile and get straight to the point without forgetting decoupled code.
+I could have used a dependency injection container, even a small one like Pimple, but I preferred to keep it simple and 
+initialize the objects with their relations directly in the [app](https://github.com/cirpo/sainsburys-scraper/blob/76be66b0dd4f4171058d896a1c0e1ef6a05d3bcd/bin/scraper#L13L20)
 
 ## Structure
 
 * **Command** ProductsScraperCommand is responsible to start the app and to handle the possible command options
-* **Service** ProductsInfoScraper is the service responsible to call the scraper and collet the product info
+* **Service** ProductsInfoScraper is the service responsible to call the scraper and collect the product info
 * **Scraper** ProductDetailScraper and ProductListScraper
 * **Model** Product, Products and Url are the main object in the domain
 
