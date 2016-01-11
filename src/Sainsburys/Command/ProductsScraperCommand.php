@@ -37,8 +37,7 @@ class ProductsScraperCommand extends Command
         $this->setName('products-scraper')
             ->setDescription('Sainsbury\'s product scraper')
             ->addOption('pretty')
-            ->addArgument('url', InputArgument::OPTIONAL, 'Sainsbury\'s product list url to scrape'
-            );
+            ->addArgument('url', InputArgument::OPTIONAL, 'Sainsbury\'s product list url to scrape');
     }
 
     /**
@@ -50,13 +49,18 @@ class ProductsScraperCommand extends Command
         $urlStr = $input->getArgument('url') ? $input->getArgument('url') : self::DEFAULT_URL;
         $url    = new Url($urlStr);
 
-        $products = $this->productsInfoScraper->extract($url);
+        try {
+            $products = $this->productsInfoScraper->extract($url);
+        } catch (\Exception $e) {
+            return $output->writeln('Something wrong happened: '.$e->getMessage());
+        }
+
         if (!$products->hasProducts()) {
             return $output->writeln('No products found');
         }
 
         if ($input->getOption('pretty')) {
-            return  $output->writeln(json_encode($products->toArray(), JSON_PRETTY_PRINT));
+            return $output->writeln(json_encode($products->toArray(), JSON_PRETTY_PRINT));
         }
 
         return $output->writeln(json_encode($products->toArray()));

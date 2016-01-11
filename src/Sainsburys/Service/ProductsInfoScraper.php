@@ -35,19 +35,14 @@ class ProductsInfoScraper
     {
         $products = new Products();
 
-        try {
-            $productsUrls = $this->productListScraper->extractProductLinks($url);
+        $productsUrls = $this->productListScraper->extractProductLinks($url);
 
-            foreach ($productsUrls as $productUrl) {
-                $product = $this->productDetailScraper->extractDetail($productUrl);
+        foreach ($productsUrls as $productUrl) {
+            $product = $this->productDetailScraper->extractDetail($productUrl);
 
-                if ($product) {
-                    $products->add($product);
-                }
+            if ($product) {
+                $products->add($product);
             }
-        } catch (\Exception $e) {
-            echo $e->getMessage()."\n";
-            echo $e->getTraceAsString();
         }
 
         return $products;
