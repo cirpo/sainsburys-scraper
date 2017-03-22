@@ -16,6 +16,11 @@ and the description to display in the JSON.*
 `description` keys corresponding to items in the table.
 Additionally, there should be a total field which is a sum of all unit prices on the page.*
 
+The link to use is:
+[http://hiring-tests.s3-website-eu-west-
+1.amazonaws.com/2015_Developer_Scrape/5_products.html](http://hiring-tests.s3-website-eu-west-
+1.amazonaws.com/2015_Developer_Scrape/5_products.html)
+
 Example JSON:
 
 ```json
