@@ -99,3 +99,4 @@ initialize the objects with their relations directly in the [app](https://github
 * **Scraper** ProductDetailScraper and ProductListScraper
 * **Model** Product, Products and Url are the main object in the domain
 
+Samm :)
